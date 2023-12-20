@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+	"os"
+)
 
 var version string
 var revision string
@@ -17,4 +21,13 @@ func _version() {
 
 func add(a, b int) int {
 	return a + b
+}
+
+// ファイルを開いて、読み込んで、書き込んで、閉じる
+func openAndRead() {
+	f, err := os.Open("test.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
 }
