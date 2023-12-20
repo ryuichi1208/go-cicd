@@ -1,5 +1,6 @@
 TARGET=go-cicd
 
+.PHONY:
 build:
 	go build -ldflags \
 		" \
@@ -9,5 +10,19 @@ build:
 		" \
 		-o $(TARGET) .
 
+.PHONY:
 clean:
 	rm -f $(TARGET)
+
+.PHONY: release
+release: deps-release
+	goreleaser --clean
+
+.PHONY: deps-release
+deps-release: goreleaser
+
+.PHONY: goreleaser
+goreleaser:
+ifeq ($(shell command -v goreleaser 2> /dev/null),)
+	go install github.com/goreleaser/goreleaser@latest
+endif
