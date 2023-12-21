@@ -16,7 +16,7 @@ func main() {
 }
 
 func _version() {
-	fmt.Println(version, revision, build)
+	fmt.Println("ver: ", version, "rev: ", revision, "build: ", build)
 }
 
 func add(a, b int) int {
