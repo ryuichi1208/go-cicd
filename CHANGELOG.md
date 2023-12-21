@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.0.5](https://github.com/ryuichi1208/go-cicd/compare/v0.0.4...v0.0.5) - 2023-12-21
+
 ## [v0.0.4](https://github.com/ryuichi1208/go-cicd/compare/v0.0.3...v0.0.4) - 2023-12-21
 - Configure Renovate by @renovate in https://github.com/ryuichi1208/go-cicd/pull/1
 - Update actions/setup-go action to v5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/7
