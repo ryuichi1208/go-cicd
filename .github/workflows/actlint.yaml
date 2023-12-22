@@ -24,3 +24,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - run: golangci-lint run
+
+
