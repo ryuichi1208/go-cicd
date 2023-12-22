@@ -13,7 +13,10 @@ import (
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/sdk/resource"
+	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
+	"golang.org/x/sync/errgroup"
+	"golang.org/x/sync/singleflight"
 )
 
 var version string
@@ -99,13 +102,24 @@ func NewResource(serviceName string, version string, environment string) *resour
 	)
 }
 
-func NewJaegerExporter() (sdktrace.SpanExporter, error) {
-	// Port details: https://www.jaegertracing.io/docs/getting-started/
-	endpoint := os.Getenv("EXPORTER_ENDPOINT")
+func single() {
+	fmt.Println("--- Start ---")
+	eg, _ := errgroup.WithContext(context.Background())
 
-	exporter, err := jaeger.New(jaeger.WithCollectorEndpoint(jaeger.WithEndpoint(endpoint)))
-	if err != nil {
-		return nil, err
+	var g singleflight.Group
+	for i := 0; i < 5; i++ {
+		eg.Go(func() error {
+			val, _, _ := g.Do("key", func() (interface{}, error) {
+				fmt.Println("function called")
+				time.Sleep(1 * time.Second)
+				return "value", nil
+			})
+
+			fmt.Println(val)
+			return nil
+		})
 	}
-	return exporter, nil
+
+	_ = eg.Wait()
+	fmt.Println("--- Done ---")
 }

@@ -6,6 +6,7 @@ require (
 	github.com/labstack/echo v3.3.10+incompatible
 	go.opentelemetry.io/otel v1.21.0
 	go.opentelemetry.io/otel/sdk v1.21.0
+	golang.org/x/sync v0.5.0
 )
 
 require (
