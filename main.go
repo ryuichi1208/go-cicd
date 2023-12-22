@@ -53,7 +53,7 @@ func _version() {
 }
 
 func add(a, b int) int {
-	return a + b
+	return a + b + 1
 }
 
 // ファイルを開いて、読み込んで、書き込んで、閉じる
