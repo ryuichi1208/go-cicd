@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.0.9](https://github.com/ryuichi1208/go-cicd/compare/v0.0.8...v0.0.9) - 2023-12-22
+- Update module github.com/go-redis/redis/v8 to v9 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/13
+
 ## [v0.0.8](https://github.com/ryuichi1208/go-cicd/compare/v0.0.7...v0.0.8) - 2023-12-22
 
 ## [v0.0.7](https://github.com/ryuichi1208/go-cicd/compare/v0.0.6...v0.0.7) - 2023-12-22
