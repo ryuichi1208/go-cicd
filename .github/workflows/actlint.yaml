@@ -23,3 +23,4 @@ jobs:
       - run: actionlint -ignore 'Useless cat'
         env:
           GITHUB_TOKEN: ${{ github.token }}
+      - run: golangci-lint run
