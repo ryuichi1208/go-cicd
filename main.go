@@ -10,10 +10,12 @@ import (
 	"testing"
 	"time"
 
+	"github.com/cenkalti/backoff/v4"
 	"github.com/go-redis/redis/v8"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/tj/assert"
+	"go.etcd.io/etcd/clientv3"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/exporters/jaeger"
@@ -22,6 +24,7 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/sync/singleflight"
+	"google.golang.org/grpc"
 
 	"github.com/bradfitz/gomemcache/memcache"
 
@@ -192,4 +195,68 @@ func _redis() {
 	}
 
 	println("Result: ", ret)
+}
+
+func zitter() {
+	// リクエストを行う関数
+	operation := func() error {
+		resp, err := http.Get("https://example.com")
+		if err != nil {
+			// ネットワークエラーなど、再試行が必要な場合はエラーを返す
+			return err
+		}
+
+		defer resp.Body.Close()
+
+		// リクエストが成功した場合（HTTPステータスコード200）
+		if resp.StatusCode == http.StatusOK {
+			fmt.Println("リクエスト成功:", resp.Status)
+			return nil
+		}
+
+		// サーバエラーなど、再試行が必要な場合はエラーを返す
+		return fmt.Errorf("サーバエラー: %v", resp.Status)
+	}
+
+	// エクスポネンシャルバックオフの設定
+	expBackOff := backoff.NewExponentialBackOff()
+	expBackOff.MaxElapsedTime = 5 * time.Minute // 最大待ち時間を5分に設定
+
+	// リトライ処理の実行
+	err := backoff.Retry(operation, expBackOff)
+	if err != nil {
+		// 最終的にリトライが失敗した場合
+		fmt.Println("リトライ失敗:", err)
+		return
+	}
+
+	// 成功時の処理
+	fmt.Println("リクエスト成功")
+}
+
+func cliEtcd() {
+	// expect dial time-out on ipv4 blackhole
+	_, err := clientv3.New(clientv3.Config{
+		Endpoints:   []string{"http://254.0.0.1:12345"},
+		DialTimeout: 2 * time.Second,
+	})
+
+	// etcd clientv3 >= v3.2.10, grpc/grpc-go >= v1.7.3
+	if err == context.DeadlineExceeded {
+		// handle errors
+	}
+
+	// etcd clientv3 <= v3.2.9, grpc/grpc-go <= v1.2.1
+	if err == grpc.ErrClientConnTimeout {
+		// handle errors
+	}
+
+	cli, err := clientv3.New(clientv3.Config{
+		Endpoints:   []string{"localhost:2379", "localhost:22379", "localhost:32379"},
+		DialTimeout: 5 * time.Second,
+	})
+	if err != nil {
+		// handle error!
+	}
+	defer cli.Close()
 }
