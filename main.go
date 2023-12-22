@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"log"
 	"net/http"
@@ -10,14 +11,22 @@ import (
 	"testing"
 	"time"
 
+	"github.com/1Password/connect-sdk-go/connect"
+	"github.com/aws/aws-sdk-go-v2/config"
+	s3v2 "github.com/aws/aws-sdk-go-v2/service/s3"
+	"github.com/aws/aws-sdk-go/aws"
+	"github.com/aws/aws-sdk-go/aws/credentials"
+	"github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/cenkalti/backoff/v4"
 	"github.com/go-redis/redis/v8"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/tj/assert"
 	"go.opentelemetry.io/otel"
-	"go.opentelemetry.io/otel/attribute"
-	"go.opentelemetry.io/otel/exporters/jaeger"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
+	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
+	"go.opentelemetry.io/otel/propagation"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
@@ -73,54 +82,84 @@ func hello(c echo.Context) error {
 	return c.String(http.StatusOK, "Hello, World!")
 }
 
-func NewJaegerExporter() (sdktrace.SpanExporter, error) {
-	// Port details: https://www.jaegertracing.io/docs/getting-started/
-	endpoint := os.Getenv("EXPORTER_ENDPOINT")
+var tracer = otel.Tracer("otel-echo")
 
-	exporter, err := jaeger.New(jaeger.WithCollectorEndpoint(jaeger.WithEndpoint(endpoint)))
+func initProvider(ctx context.Context) func() {
+	fmt.Println("this1")
+	// リソース情報（プロセス、ホスト、サービス名など）を設定
+	res, err := resource.New(ctx,
+		resource.WithFromEnv(),
+		resource.WithProcess(),
+		resource.WithTelemetrySDK(),
+		resource.WithHost(),
+		resource.WithOSType(),
+		resource.WithProcessOwner(),
+		resource.WithTelemetrySDK(),
+		resource.WithAttributes(
+			semconv.ServiceNameKey.String(os.Args[2]),
+		),
+	)
 	if err != nil {
-		return nil, err
+		log.Fatalf("failed to create resource: %v", err)
 	}
-	return exporter, nil
-}
 
-func NewTracerProvider(serviceName string) (*sdktrace.TracerProvider, func(), error) {
-	exporter, err := NewJaegerExporter()
+	fmt.Println("this2")
+	otelAgentAddr, ok := os.LookupEnv("OTEL_EXPORTER_OTLP_ENDPOINT")
+	if !ok {
+		otelAgentAddr = "0.0.0.0:4317"
+	}
+
+	httpHeader := map[string]string{
+		"X-Scope-OrgID": "1",
+	}
+
+	traceClient := otlptracehttp.NewClient(
+		otlptracehttp.WithHeaders(httpHeader),
+		otlptracehttp.WithInsecure(),
+		otlptracehttp.WithEndpoint(otelAgentAddr),
+		otlptracehttp.WithTimeout(5*time.Second),
+		otlptracehttp.WithRetry(otlptracehttp.RetryConfig{ // エクスポート失敗時にバッチ送信をリトライするための設定
+			Enabled:         true,
+			InitialInterval: 500 * time.Millisecond, // 最初の失敗後にリトライするまでの待ち時間
+			MaxInterval:     5 * time.Second,        // 最大待ち時間
+			MaxElapsedTime:  30 * time.Second,       // 最大経過時間
+		}),
+	)
+	fmt.Println("this3")
+	traceExp, err := otlptrace.New(ctx, traceClient)
 	if err != nil {
-		return nil, nil, err
+		log.Fatalf("failed to create trace exporter: %v", err)
 	}
 
-	r := NewResource(serviceName, "1.0.0", "local")
-	tp := sdktrace.NewTracerProvider(
-		sdktrace.WithBatcher(exporter),
-		sdktrace.WithResource(r),
+	bsp := sdktrace.NewBatchSpanProcessor(
+		traceExp,
+		sdktrace.WithMaxQueueSize(5000),
+		sdktrace.WithMaxExportBatchSize(512),
+	)
+	tracerProvider := sdktrace.NewTracerProvider(
 		sdktrace.WithSampler(sdktrace.AlwaysSample()),
+		sdktrace.WithResource(res),
+		sdktrace.WithSpanProcessor(bsp),
 	)
+	fmt.Println("this4")
 
-	otel.SetTracerProvider(tp)
+	// リクエストヘッダーからトレースIDとスパンIDを取得するための設定
+	otel.SetTextMapPropagator(
+		propagation.NewCompositeTextMapPropagator(
+			propagation.TraceContext{},
+			propagation.Baggage{},
+		),
+	)
+	otel.SetTracerProvider(tracerProvider)
 
-	cleanup := func() {
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-		if err := tp.ForceFlush(ctx); err != nil {
-			log.Print(err)
+	fmt.Println("this5")
+	return func() {
+		cxt, cancel := context.WithTimeout(ctx, time.Second)
+		defer cancel()
+		if err := traceExp.Shutdown(cxt); err != nil {
+			otel.Handle(err)
 		}
-		ctx2, cancel2 := context.WithTimeout(context.Background(), 5*time.Second)
-		if err := tp.Shutdown(ctx2); err != nil {
-			log.Print(err)
-		}
-		cancel()
-		cancel2()
 	}
-	return tp, cleanup, nil
-}
-
-func NewResource(serviceName string, version string, environment string) *resource.Resource {
-	return resource.NewWithAttributes(
-		semconv.SchemaURL,
-		semconv.ServiceNameKey.String(serviceName),
-		semconv.ServiceVersionKey.String(version),
-		attribute.String("environment", environment),
-	)
 }
 
 func single() {
@@ -230,4 +269,70 @@ func zitter() {
 
 	// 成功時の処理
 	fmt.Println("リクエスト成功")
+}
+
+type GoStruct struct {
+	A int
+	B string
+}
+
+func _json() {
+	stcData := GoStruct{A: 1, B: "bbb"}
+
+	// Marshal関数でjsonエンコード
+	// ->返り値jsonDataにはエンコード結果が[]byteの形で格納される
+	jsonData, err := json.Marshal(stcData)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	fmt.Printf("%s\n", jsonData)
+}
+
+func onePass() {
+	client, err := connect.NewClientFromEnvironment()
+	item, err := client.GetItem("<item-uuid>", "<vault-uuid>")
+	if err != nil {
+		log.Fatal(item, err)
+	}
+}
+
+func s3list() {
+	creds := credentials.NewStaticCredentials("AWS_ACCESS_KEY", "AWS_SECRET_ACCESS_KEY", "")
+	sess, err := session.NewSession(&aws.Config{
+		Credentials: creds,
+		Region:      aws.String("ap-northeast-1")},
+	)
+	svc := s3.New(sess)
+
+	fmt.Println(err, svc)
+}
+
+func s3listv2() {
+	sdkConfig, err := config.LoadDefaultConfig(context.TODO())
+	if err != nil {
+		fmt.Println("Couldn't load default configuration. Have you set up your AWS account?")
+		fmt.Println(err)
+		return
+	}
+	s3Client := s3v2.NewFromConfig(sdkConfig)
+	count := 10
+	fmt.Printf("Let's list up to %v buckets for your account.\n", count)
+	result, err := s3Client.ListBuckets(context.TODO(), &s3.ListBucketsInput{})
+	if err != nil {
+		fmt.Printf("Couldn't list buckets for your account. Here's why: %v\n", err)
+		return
+	}
+	if len(result.Buckets) == 0 {
+		fmt.Println("You don't have any buckets!")
+	} else {
+		if count > len(result.Buckets) {
+			count = len(result.Buckets)
+		}
+		for _, bucket := range result.Buckets[:count] {
+			fmt.Printf("\t%v\n", *bucket.Name)
+		}
+	}
+
 }
