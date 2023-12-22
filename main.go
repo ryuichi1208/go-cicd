@@ -22,6 +22,7 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	"github.com/mmcdole/gofeed"
 	"github.com/tj/assert"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
@@ -319,7 +320,7 @@ func s3listv2() {
 	s3Client := s3v2.NewFromConfig(sdkConfig)
 	count := 10
 	fmt.Printf("Let's list up to %v buckets for your account.\n", count)
-	result, err := s3Client.ListBuckets(context.TODO(), &s3.ListBucketsInput{})
+	result, err := s3Client.ListBuckets(context.TODO(), &s3v2.ListBucketsInput{})
 	if err != nil {
 		fmt.Printf("Couldn't list buckets for your account. Here's why: %v\n", err)
 		return
@@ -333,6 +334,25 @@ func s3listv2() {
 		for _, bucket := range result.Buckets[:count] {
 			fmt.Printf("\t%v\n", *bucket.Name)
 		}
+	}
+
+}
+
+func rssFeed() {
+	feed, err := gofeed.NewParser().ParseURL("https://zenn.dev/spiegel/feed")
+	if err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		return
+	}
+	fmt.Println(feed.Title)
+	fmt.Println(feed.FeedType, feed.FeedVersion)
+	for _, item := range feed.Items {
+		if item == nil {
+			break
+		}
+		fmt.Println(item.Title)
+		fmt.Println("\t->", item.Link)
+		fmt.Println("\t->", item.PublishedParsed.Format(time.RFC3339))
 	}
 
 }
