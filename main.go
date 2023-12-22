@@ -2,14 +2,17 @@ package main
 
 import (
 	"context"
+	"database/sql"
 	"fmt"
 	"log"
 	"net/http"
 	"os"
+	"testing"
 	"time"
 
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
+	"github.com/tj/assert"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
 	"go.opentelemetry.io/otel/sdk/resource"
@@ -17,6 +20,10 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/sync/singleflight"
+
+	"github.com/bradfitz/gomemcache/memcache"
+
+	_ "github.com/go-sql-driver/mysql"
 )
 
 var version string
@@ -122,4 +129,36 @@ func single() {
 
 	_ = eg.Wait()
 	fmt.Println("--- Done ---")
+}
+
+func TestPingMySql(t *testing.T) {
+	db, err := sql.Open("mysql", "kazuhira:password@(172.17.0.2:3306)/practice")
+
+	assert.Nil(t, err)
+	assert.NotNil(t, db)
+
+	defer db.Close()
+
+	err = db.Ping()
+	assert.Nil(t, err)
+}
+
+var (
+	mc *memcache.Client
+)
+
+func memcached() {
+	mc = memcache.New("127.0.0.1:11211")
+	defer mc.Close()
+
+	var it *memcache.Item
+	it, err := mc.Get("KEY")
+	if err != nil {
+		// キャッシュになかった
+		mc.Set(&memcache.Item{Key: "KEY", Value: "VALUE"})
+	} else {
+		// キャッシュあった
+		val := it.Value
+		fmt.Println(val)
+	}
 }
