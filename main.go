@@ -10,11 +10,13 @@ import (
 	"testing"
 	"time"
 
+	"github.com/go-redis/redis/v8"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/tj/assert"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/attribute"
+	"go.opentelemetry.io/otel/exporters/jaeger"
 	"go.opentelemetry.io/otel/sdk/resource"
 	sdktrace "go.opentelemetry.io/otel/sdk/trace"
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
@@ -68,6 +70,17 @@ func httpServer() {
 
 func hello(c echo.Context) error {
 	return c.String(http.StatusOK, "Hello, World!")
+}
+
+func NewJaegerExporter() (sdktrace.SpanExporter, error) {
+	// Port details: https://www.jaegertracing.io/docs/getting-started/
+	endpoint := os.Getenv("EXPORTER_ENDPOINT")
+
+	exporter, err := jaeger.New(jaeger.WithCollectorEndpoint(jaeger.WithEndpoint(endpoint)))
+	if err != nil {
+		return nil, err
+	}
+	return exporter, nil
 }
 
 func NewTracerProvider(serviceName string) (*sdktrace.TracerProvider, func(), error) {
@@ -154,11 +167,29 @@ func memcached() {
 	var it *memcache.Item
 	it, err := mc.Get("KEY")
 	if err != nil {
-		// キャッシュになかった
-		mc.Set(&memcache.Item{Key: "KEY", Value: "VALUE"})
 	} else {
 		// キャッシュあった
 		val := it.Value
 		fmt.Println(val)
 	}
+}
+
+func _redis() {
+	var ctx = context.Background()
+
+	rdb := redis.NewClient(&redis.Options{
+		Addr:     "localhost:6379",
+		Password: "", // no password set
+		DB:       0,  // use default DB
+		PoolSize: 1000,
+	})
+
+	rdb.Set(ctx, "mykey1", "hoge", 0)           // キー名 mykey1で文字列hogeをセット
+	ret, err := rdb.Get(ctx, "mykey1").Result() // キー名mykey1を取得
+	if err != nil {
+		println("Error: ", err)
+		return
+	}
+
+	println("Result: ", ret)
 }
