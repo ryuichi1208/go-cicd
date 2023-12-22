@@ -9,7 +9,7 @@ require (
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.47.7
 	github.com/bradfitz/gomemcache v0.0.0-20230905024940-24af94b03874
 	github.com/cenkalti/backoff/v4 v4.2.1
-	github.com/go-redis/redis/v8 v8.11.5
+	github.com/go-redis/redis/v9 v9.3.1
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/mmcdole/gofeed v1.2.1
