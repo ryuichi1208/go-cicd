@@ -4,6 +4,7 @@ go 1.21
 
 require (
 	github.com/1Password/connect-sdk-go v1.5.3
+	github.com/PagerDuty/go-pagerduty v1.7.0
 	github.com/aws/aws-sdk-go v1.49.8
 	github.com/aws/aws-sdk-go-v2/config v1.26.2
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.47.7
@@ -47,6 +48,7 @@ require (
 	github.com/go-logr/logr v1.3.0 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
+	github.com/google/go-querystring v1.1.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.16.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect

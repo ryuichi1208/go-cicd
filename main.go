@@ -44,8 +44,7 @@ var revision string
 var build string
 
 func main() {
-	add(1, 2)
-	_version()
+	something()
 }
 
 func _version() {
