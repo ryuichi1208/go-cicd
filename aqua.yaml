@@ -18,3 +18,4 @@ packages:
 - name: tilt-dev/tilt@v0.33.10
 - name: tilt-dev/ctlptl@v0.8.25
 - name: starship/starship@v1.15.0
+- name: sbstp/kubie@v0.21.0
