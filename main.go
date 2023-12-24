@@ -23,6 +23,7 @@ import (
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/mmcdole/gofeed"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/tj/assert"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
@@ -362,4 +363,35 @@ func aaa() {
 	b := 1 + 2
 	b = 10
 	fmt.Println(b)
+}
+
+// メトリクスを記録する構造体
+type MetricsMonitors struct {
+	counter *prometheus.CounterVec
+}
+
+// MetricsMonitor の初期化メソッド
+func NewMetricsMonitors() MetricsMonitors {
+	monitors := MetricsMonitors{
+		counter: prometheus.NewCounterVec(
+			prometheus.CounterOpts{
+				Name: "myapp_request_total",
+				Help: "The total number of requests with number param",
+			},
+			[]string{"odd_or_even"},
+		),
+	}
+	prometheus.MustRegister(monitors.counter)
+	return monitors
+}
+
+// メトリクスを記録するメソッド
+func (mm *MetricsMonitors) record(number int) {
+	if number%2 != 0 {
+		m := mm.counter.WithLabelValues("odd")
+		m.Inc()
+	} else {
+		m := mm.counter.WithLabelValues("even")
+		m.Inc()
+	}
 }
