@@ -1,5 +1,7 @@
 # Changelog
 
+## [v0.0.18](https://github.com/ryuichi1208/go-cicd/compare/v0.0.17...v0.0.18) - 2023-12-24
+
 ## [v0.0.17](https://github.com/ryuichi1208/go-cicd/compare/v0.0.16...v0.0.17) - 2023-12-24
 - Update dependency aquaproj/aqua-registry to v4.110.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/27
 - Update dependency kubernetes-sigs/kind to v0.20.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/28
