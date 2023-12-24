@@ -353,5 +353,13 @@ func rssFeed() {
 		fmt.Println("\t->", item.Link)
 		fmt.Println("\t->", item.PublishedParsed.Format(time.RFC3339))
 	}
+}
 
+func aaa() {
+	var aaa string
+	fmt.Println(aaa)
+
+	b := 1 + 2
+	b = 10
+	fmt.Println(b)
 }

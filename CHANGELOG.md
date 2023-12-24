@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.0.14](https://github.com/ryuichi1208/go-cicd/compare/v0.0.13...v0.0.14) - 2023-12-23
+- add cicd by @ryuichi1208 in https://github.com/ryuichi1208/go-cicd/pull/24
+- Update module github.com/aws/aws-sdk-go to v1.49.9 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/21
+
 ## [v0.0.13](https://github.com/ryuichi1208/go-cicd/compare/v0.0.12...v0.0.13) - 2023-12-23
 
 ## [v0.0.12](https://github.com/ryuichi1208/go-cicd/compare/v0.0.11...v0.0.12) - 2023-12-22
