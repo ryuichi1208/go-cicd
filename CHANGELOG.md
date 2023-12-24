@@ -1,5 +1,13 @@
 # Changelog
 
+## [v0.0.19](https://github.com/ryuichi1208/go-cicd/compare/v0.0.18...v0.0.19) - 2023-12-24
+- Update dependency kubernetes-sigs/kubebuilder to v3.13.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/33
+- Update dependency kubernetes-sigs/kustomize to v4.5.7 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/34
+- Update dependency kubernetes/kubectl to v1.29.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/35
+- Update dependency tilt-dev/ctlptl to v0.8.25 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/36
+- Update ubuntu Docker tag to mantic-20231128 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/37
+- Update dependency tilt-dev/tilt to v0.33.10 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/38
+
 ## [v0.0.18](https://github.com/ryuichi1208/go-cicd/compare/v0.0.17...v0.0.18) - 2023-12-24
 
 ## [v0.0.17](https://github.com/ryuichi1208/go-cicd/compare/v0.0.16...v0.0.17) - 2023-12-24
