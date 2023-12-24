@@ -7,5 +7,7 @@
   "timezone": "Asia/Tokyo",
   "prConcurrentLimit": 10,
   "reviewers": ["ryuichi1208"],
-  "labels": ["renovate"]
+  "labels": ["renovate", "In Review"],
+  "automerge": true,
+  "platformAutomerge": true
 }
