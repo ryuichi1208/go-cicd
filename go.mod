@@ -5,7 +5,7 @@ go 1.21
 require (
 	github.com/1Password/connect-sdk-go v1.5.3
 	github.com/PagerDuty/go-pagerduty v1.7.0
-	github.com/aws/aws-sdk-go v1.49.10
+	github.com/aws/aws-sdk-go v1.49.11
 	github.com/aws/aws-sdk-go-v2/config v1.26.2
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.47.7
 	github.com/bradfitz/gomemcache v0.0.0-20230905024940-24af94b03874
