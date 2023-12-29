@@ -35,6 +35,7 @@ import (
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/sync/singleflight"
 
+	"github.com/Unleash/unleash-client-go/v4"
 	"github.com/bradfitz/gomemcache/memcache"
 
 	_ "github.com/go-sql-driver/mysql"
@@ -394,4 +395,16 @@ func (mm *MetricsMonitors) record(number int) {
 		m := mm.counter.WithLabelValues("even")
 		m.Inc()
 	}
+}
+
+func unleashCli() {
+	unleash.Initialize(
+		unleash.WithListener(&unleash.DebugListener{}),
+		unleash.WithAppName("my-application"),
+		unleash.WithUrl("http://unleash.herokuapp.com/api/"),
+		unleash.WithCustomHeaders(http.Header{"Authorization": {"<API token>"}}),
+	)
+
+	// Note this will block until the default client is ready
+	unleash.WaitForReady()
 }

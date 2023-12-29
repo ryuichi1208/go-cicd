@@ -5,6 +5,7 @@ go 1.21
 require (
 	github.com/1Password/connect-sdk-go v1.5.3
 	github.com/PagerDuty/go-pagerduty v1.7.0
+	github.com/Unleash/unleash-client-go/v4 v4.1.0
 	github.com/aws/aws-sdk-go v1.49.12
 	github.com/aws/aws-sdk-go-v2/config v1.26.2
 	github.com/aws/aws-sdk-go-v2/service/s3 v1.47.7
@@ -24,6 +25,7 @@ require (
 )
 
 require (
+	github.com/Masterminds/semver/v3 v3.1.1 // indirect
 	github.com/PuerkitoBio/goquery v1.8.0 // indirect
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/aws/aws-sdk-go-v2 v1.24.0 // indirect
@@ -68,7 +70,9 @@ require (
 	github.com/prometheus/client_model v0.5.0 // indirect
 	github.com/prometheus/common v0.45.0 // indirect
 	github.com/prometheus/procfs v0.12.0 // indirect
+	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/stretchr/testify v1.8.4 // indirect
+	github.com/twmb/murmur3 v1.1.5 // indirect
 	github.com/uber/jaeger-client-go v2.30.0+incompatible // indirect
 	github.com/uber/jaeger-lib v2.4.1+incompatible // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
