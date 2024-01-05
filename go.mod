@@ -8,7 +8,7 @@ require (
 	github.com/Unleash/unleash-client-go/v4 v4.1.0
 	github.com/aws/aws-sdk-go v1.49.16
 	github.com/aws/aws-sdk-go-v2/config v1.26.3
-	github.com/aws/aws-sdk-go-v2/service/s3 v1.47.8
+	github.com/aws/aws-sdk-go-v2/service/s3 v1.48.0
 	github.com/bradfitz/gomemcache v0.0.0-20230905024940-24af94b03874
 	github.com/cenkalti/backoff/v4 v4.2.1
 	github.com/go-redis/redis/v8 v8.11.5
