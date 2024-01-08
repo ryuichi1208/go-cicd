@@ -21,6 +21,8 @@
     {
       "matchPackagePatterns": ["^actions/setup-"],
       "groupName": "setup actions packages"
+      "automerge": false,
+      "platformAutomerge": false
     }
   ]
 }
