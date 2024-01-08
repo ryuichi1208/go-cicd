@@ -1,5 +1,45 @@
 # Changelog
 
+## [v0.0.20](https://github.com/ryuichi1208/go-cicd/compare/v0.0.19...v0.0.20) - 2024-01-08
+- Update dependency tilt-dev/ctlptl to v0.8.25 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/40
+- Update dependency kubernetes-sigs/kind to v0.20.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/42
+- Update dependency kubernetes-sigs/krew to v0.4.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/44
+- Update dependency sbstp/kubie to v0.23.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/45
+- Update dependency starship/starship to v1.16.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/46
+- Update dependency x-motemen/ghq to v1.4.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/47
+- Update dependency aquaproj/aqua-registry to v4.111.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/48
+- Update module github.com/aws/aws-sdk-go to v1.49.10 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/49
+- Update module github.com/aws/aws-sdk-go to v1.49.11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/50
+- Update module github.com/prometheus/client_golang to v1.18.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/51
+- Update dependency starship/starship to v1.17.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/52
+- Update module github.com/aws/aws-sdk-go to v1.49.12 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/53
+- Update module github.com/aws/aws-sdk-go to v1.49.13 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/54
+- Update dependency aquaproj/aqua-registry to v4.112.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/55
+- Update dependency starship/starship to v1.17.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/56
+- Update module github.com/aws/aws-sdk-go to v1.49.14 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/57
+- Update module golang.org/x/sync to v0.6.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/58
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/59
+- Update dependency aquaproj/aqua-registry to v4.112.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/61
+- Update module github.com/aws/aws-sdk-go to v1.49.15 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/60
+- Update dependency aquaproj/aqua-registry to v4.113.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/62
+- Update module github.com/aws/aws-sdk-go to v1.49.16 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/63
+- Update module github.com/aws/aws-sdk-go-v2/service/s3 to v1.48.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/64
+- Update dependency aquaproj/aqua-registry to v4.114.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/65
+- Update actions/checkout action to v4.1.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/66
+- Update actions/first-interaction action to v1.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/67
+- Update actions/setup-go action to v4.1.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/68
+- Update actions/github-script action to v0.9.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/71
+- Update actions/github-script action to v7 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/69
+- Update update.yml by @ryuichi1208 in https://github.com/ryuichi1208/go-cicd/pull/73
+- Update actions/configure-pages action to v3.0.7 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/74
+- Update renovate.json by @ryuichi1208 in https://github.com/ryuichi1208/go-cicd/pull/75
+- Update update.yml by @ryuichi1208 in https://github.com/ryuichi1208/go-cicd/pull/77
+- Update update.yml by @ryuichi1208 in https://github.com/ryuichi1208/go-cicd/pull/78
+- Update actions/go-dependency-submission action to v1.0.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/79
+- Update actions/delete-package-versions action to v4.1.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/80
+- Update renovate.json by @ryuichi1208 in https://github.com/ryuichi1208/go-cicd/pull/81
+- Update setup actions packages by @renovate in https://github.com/ryuichi1208/go-cicd/pull/72
+
 ## [v0.0.19](https://github.com/ryuichi1208/go-cicd/compare/v0.0.18...v0.0.19) - 2023-12-24
 - Update dependency kubernetes-sigs/kubebuilder to v3.13.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/33
 - Update dependency kubernetes-sigs/kustomize to v4.5.7 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/34
