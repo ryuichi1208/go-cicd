@@ -10,8 +10,11 @@
   "labels": ["renovate", "In Review"],
   "packageRules": [
     {
+      "matchUpdateTypes": "major",
+      "addLabels": ["major-update"]
+    },
+    {
       "matchUpdateTypes": [
-        "major",
         "minor",
         "patch",
         "pin"
