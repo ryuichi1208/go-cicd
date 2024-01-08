@@ -1,0 +1,12 @@
+---
+name: test-update
+on:
+  pull_request:
+    branches: [test]
+permissions: {}
+jobs:
+  default:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
