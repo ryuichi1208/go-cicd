@@ -5,7 +5,7 @@ on:
     branches: [test]
 permissions: {}
 jobs:
-  default:
+  default1:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/cache@v3
@@ -33,3 +33,16 @@ jobs:
       - uses: actions/typescript-action@v1
       - uses: actions/upload-artifact@v4.0.0
       - uses: actions/upload-pages-artifact@v3
+  default2:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: appleboy/scp-action@v0.1.7
+      - uses: armbian/build@v23.11.2
+      - uses: di-sukharev/opencommit@github-action-v1.0.2
+      - uses: JamesIves/github-pages-deploy-action@v4.5.0
+      - uses: lowlighter/metrics@v3.34
+      - uses: mikefarah/yq@v4.40.5
+      - uses: peaceiris/actions-gh-pages@v3.9.3
+      - uses: securego/gosec@v2.18.2
+      - uses: super-linter/super-linter@v5.7.2
+      - uses: trufflesecurity/trufflehog@v3.63.7
