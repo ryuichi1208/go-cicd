@@ -8,7 +8,7 @@
 	  "regex",
 	  "gomod",
 	  "github-actions",
-	  "helm"
+	  "helmfile"
   ],
   "timezone": "Asia/Tokyo",
   "prConcurrentLimit": 10,
