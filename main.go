@@ -6,25 +6,35 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
+	"net/smtp"
 	"os"
+	"strings"
 	"testing"
 	"time"
 
 	"github.com/1Password/connect-sdk-go/connect"
+	"github.com/Unleash/unleash-client-go/v4"
 	"github.com/aws/aws-sdk-go-v2/config"
 	s3v2 "github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/bradfitz/gomemcache/memcache"
 	"github.com/cenkalti/backoff/v4"
+	"github.com/go-git/go-billy/v5/memfs"
 	"github.com/go-redis/redis/v8"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/hirochachacha/go-smb2"
 	"github.com/labstack/echo"
 	"github.com/labstack/echo/middleware"
 	"github.com/mmcdole/gofeed"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/tj/assert"
+	nfs "github.com/willscott/go-nfs"
+	nfshelper "github.com/willscott/go-nfs/helpers"
 	"go.opentelemetry.io/otel"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace"
 	"go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp"
@@ -34,11 +44,6 @@ import (
 	semconv "go.opentelemetry.io/otel/semconv/v1.4.0"
 	"golang.org/x/sync/errgroup"
 	"golang.org/x/sync/singleflight"
-
-	"github.com/Unleash/unleash-client-go/v4"
-	"github.com/bradfitz/gomemcache/memcache"
-
-	_ "github.com/go-sql-driver/mysql"
 )
 
 var version string
@@ -407,4 +412,77 @@ func unleashCli() {
 
 	// Note this will block until the default client is ready
 	unleash.WaitForReady()
+}
+
+var (
+	hostname = "mail.example.com"
+	port     = 587
+	username = "user@example.com"
+	password = "password"
+)
+
+func __main() {
+	from := "gopher@example.net"
+	recipients := []string{"foo@example.com", "bar@example.com"}
+	subject := "hello"
+	body := "Hello World!\nHello Gopher!"
+
+	auth := smtp.CRAMMD5Auth(username, password)
+	msg := []byte(strings.ReplaceAll(fmt.Sprintf("To: %s\nSubject: %s\n\n%s", strings.Join(recipients, ","), subject, body), "\n", "\r\n"))
+	if err := smtp.SendMail(fmt.Sprintf("%s:%d", hostname, port), auth, from, recipients, msg); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+	}
+}
+
+func ___main() {
+	listener, err := net.Listen("tcp", ":0")
+	panicOnErr(err, "starting TCP listener")
+	fmt.Printf("Server running at %s\n", listener.Addr())
+	mem := memfs.New()
+	f, err := mem.Create("hello.txt")
+	panicOnErr(err, "creating file")
+	_, err = f.Write([]byte("hello world"))
+	panicOnErr(err, "writing data")
+	f.Close()
+	handler := nfshelper.NewNullAuthHandler(mem)
+	cacheHelper := nfshelper.NewCachingHandler(handler, 1)
+	panicOnErr(nfs.Serve(listener, cacheHelper), "serving nfs")
+}
+
+func panicOnErr(err error, desc ...interface{}) {
+	if err == nil {
+		return
+	}
+	log.Println(desc...)
+	log.Panicln(err)
+}
+
+func smb() {
+	conn, err := net.Dial("tcp", "SERVERNAME:445")
+	if err != nil {
+		panic(err)
+	}
+	defer conn.Close()
+
+	d := &smb2.Dialer{
+		Initiator: &smb2.NTLMInitiator{
+			User:     "USERNAME",
+			Password: "PASSWORD",
+		},
+	}
+
+	s, err := d.Dial(conn)
+	if err != nil {
+		panic(err)
+	}
+	defer s.Logoff()
+
+	names, err := s.ListSharenames()
+	if err != nil {
+		panic(err)
+	}
+
+	for _, name := range names {
+		fmt.Println(name)
+	}
 }
