@@ -4,7 +4,12 @@
     "config:recommended",
     "github>aquaproj/aqua-renovate-config#1.13.0"
   ],
-  "enabledManagers": ["regex", "gomod", "github-actions"],
+  "enabledManagers": [
+	  "regex",
+	  "gomod",
+	  "github-actions",
+	  "helm"
+  ],
   "timezone": "Asia/Tokyo",
   "prConcurrentLimit": 10,
   "labels": ["renovate", "In Review"],
