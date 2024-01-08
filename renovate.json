@@ -8,6 +8,15 @@
   "timezone": "Asia/Tokyo",
   "prConcurrentLimit": 10,
   "labels": ["renovate", "In Review"],
-  "automerge": true,
-  "platformAutomerge": true
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin"
+      ],
+      "automerge": true,
+      "platformAutomerge": true
+    }
+  ]
 }
