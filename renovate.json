@@ -19,7 +19,7 @@
       "platformAutomerge": true
     },
     {
-      "matchPackagePatterns": ["^setup-"],
+      "matchPackagePatterns": ["^actions/setup-"],
       "groupName": "setup actions packages"
     }
   ]
