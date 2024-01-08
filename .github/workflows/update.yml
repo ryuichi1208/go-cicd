@@ -19,7 +19,7 @@ jobs:
       - uses: actions/first-interaction@v1.3.0
       - uses: actions/github-script@0.3.0
       - uses: actions/labeler@v5.0.0
-      - uses: actions/setup-dotnet@3.1.0
+      - uses: actions/setup-dotnet@v3.2.0
       - uses: actions/setup-go@v4.1.0
       - uses: actions/setup-java@v4.0.0
       - uses: actions/setup-node@v4
