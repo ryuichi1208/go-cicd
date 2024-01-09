@@ -28,7 +28,7 @@ releases:
   - name: zookeeper
     namespace: default
     chart: bitnami/zookeeper
-    version: 12.3.3
+    version: 12.4.1
 
   # 以下、他のチャートの設定を追加
   - name: appsmith
