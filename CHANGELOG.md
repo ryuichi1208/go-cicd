@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.0.21](https://github.com/ryuichi1208/go-cicd/compare/v0.0.20...v0.0.21) - 2024-01-09
+- Update Helm release airflow to v16.1.10 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/82
+- Update Helm release apache to v10.2.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/83
+- Update Helm release apisix to v2.2.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/85
+- Update Helm release appsmith to v2.1.13 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/86
+- Update Helm release argo-cd to v5.2.10 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/87
+- Update Helm release cassandra to v10.6.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/88
+- Update Helm release wordpress to v18.1.30 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/89
+- Update module github.com/aws/aws-sdk-go to v1.49.17 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/90
+- Update trufflesecurity/trufflehog action to v3.63.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/91
+- Update Helm release zookeeper to v12.4.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/92
+- Update setup actions packages (major) by @renovate in https://github.com/ryuichi1208/go-cicd/pull/96
+- Update Helm release argo-cd to v5.2.11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/97
+
 ## [v0.0.20](https://github.com/ryuichi1208/go-cicd/compare/v0.0.19...v0.0.20) - 2024-01-08
 - Update dependency tilt-dev/ctlptl to v0.8.25 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/40
 - Update dependency kubernetes-sigs/kind to v0.20.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/42
