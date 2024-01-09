@@ -23,7 +23,7 @@ releases:
   - name: wordpress
     namespace: default
     chart: bitnami/wordpress
-    version: 18.1.17
+    version: 18.1.30
 
   - name: zookeeper
     namespace: default
