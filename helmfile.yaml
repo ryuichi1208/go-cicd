@@ -6,7 +6,7 @@ releases:
   - name: airflow
     namespace: default
     chart: bitnami/airflow
-    version: 16.1.11
+    version: 16.2.0
 
   - name: apache
     namespace: default
