@@ -16,7 +16,7 @@ releases:
   - name: apisix
     namespace: default
     chart: bitnami/apisix
-    version: 2.4.0
+    version: 2.4.2
 
   # ... 他のチャートの設定 ...
 
