@@ -44,7 +44,7 @@ releases:
   - name: argo-workflows
     namespace: default
     chart: bitnami/argo-workflows
-    version: 6.2.0
+    version: 6.2.1
 
   - name: aspnet-core
     namespace: default
