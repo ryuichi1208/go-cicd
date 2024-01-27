@@ -11,7 +11,7 @@ releases:
   - name: apache
     namespace: default
     chart: bitnami/apache
-    version: 10.4.1
+    version: 10.5.1
 
   - name: apisix
     namespace: default
