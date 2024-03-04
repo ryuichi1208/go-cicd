@@ -17,7 +17,7 @@ jobs:
       - uses: actions/delete-package-versions@v4.1.1
       - uses: actions/dependency-review-action@v3
       - uses: actions/deploy-pages@v4
-      - uses: actions/download-artifact@v4.1.1
+      - uses: actions/download-artifact@v4.1.4
       - uses: actions/first-interaction@v1.3.0
       - uses: actions/github-script@v7.0.1
       - uses: actions/go-dependency-submission@v1.0.3
