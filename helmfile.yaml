@@ -34,7 +34,7 @@ releases:
   - name: appsmith
     namespace: default
     chart: bitnami/appsmith
-    version: 2.4.3
+    version: 2.7.4
 
   - name: argo-cd
     namespace: default
