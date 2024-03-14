@@ -39,7 +39,7 @@ releases:
   - name: argo-cd
     namespace: default
     chart: bitnami/argo-cd
-    version: 5.10.4
+    version: 5.10.5
 
   - name: argo-workflows
     namespace: default
