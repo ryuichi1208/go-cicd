@@ -43,6 +43,6 @@ jobs:
       - uses: lowlighter/metrics@v3.34
       - uses: mikefarah/yq@v4.42.1
       - uses: peaceiris/actions-gh-pages@v3.9.3
-      - uses: securego/gosec@v2.18.2
+      - uses: securego/gosec@v2.19.0
       - uses: super-linter/super-linter@v5.7.2
       - uses: trufflesecurity/trufflehog@v3.66.3
