@@ -49,7 +49,7 @@ releases:
   - name: aspnet-core
     namespace: default
     chart: bitnami/aspnet-core
-    version: 4.4.10
+    version: 5.7.1
 
   - name: cassandra
     namespace: default
