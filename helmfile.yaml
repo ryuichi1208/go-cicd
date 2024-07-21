@@ -6,45 +6,45 @@ releases:
   - name: airflow
     namespace: default
     chart: bitnami/airflow
-    version: 16.1.6
+    version: 16.8.3
 
   - name: apache
     namespace: default
     chart: bitnami/apache
-    version: 10.2.3
+    version: 10.9.2
 
   - name: apisix
     namespace: default
     chart: bitnami/apisix
-    version: 2.2.7
+    version: 2.10.0
 
   # ... 他のチャートの設定 ...
 
   - name: wordpress
     namespace: default
     chart: bitnami/wordpress
-    version: 18.1.17
+    version: 18.1.30
 
   - name: zookeeper
     namespace: default
     chart: bitnami/zookeeper
-    version: 12.3.3
+    version: 12.12.1
 
   # 以下、他のチャートの設定を追加
   - name: appsmith
     namespace: default
     chart: bitnami/appsmith
-    version: 2.1.6
+    version: 2.8.5
 
   - name: argo-cd
     namespace: default
     chart: bitnami/argo-cd
-    version: 5.2.8
+    version: 5.10.6
 
   - name: argo-workflows
     namespace: default
     chart: bitnami/argo-workflows
-    version: 6.1.4
+    version: 6.8.1
 
   - name: aspnet-core
     namespace: default
@@ -54,4 +54,4 @@ releases:
   - name: cassandra
     namespace: default
     chart: bitnami/cassandra
-    version: 10.6.6
+    version: 10.12.1
