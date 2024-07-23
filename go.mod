@@ -17,7 +17,7 @@ require (
 	github.com/hirochachacha/go-smb2 v1.1.0
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/mmcdole/gofeed v1.3.0
-	github.com/prometheus/client_golang v1.19.0
+	github.com/prometheus/client_golang v1.19.1
 	github.com/tj/assert v0.0.3
 	github.com/willscott/go-nfs v0.0.2
 	go.opentelemetry.io/otel v1.24.0
@@ -96,6 +96,6 @@ require (
 	google.golang.org/genproto/googleapis/api v0.0.0-20240102182953-50ed04b92917 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240102182953-50ed04b92917 // indirect
 	google.golang.org/grpc v1.61.1 // indirect
-	google.golang.org/protobuf v1.32.0 // indirect
+	google.golang.org/protobuf v1.33.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
