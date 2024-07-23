@@ -39,7 +39,7 @@ jobs:
       - uses: appleboy/scp-action@v0.1.7
       - uses: armbian/build@v23.11.2
       - uses: di-sukharev/opencommit@github-action-v1.0.2
-      - uses: JamesIves/github-pages-deploy-action@v4.5.0
+      - uses: JamesIves/github-pages-deploy-action@v4.6.3
       - uses: lowlighter/metrics@v3.34
       - uses: mikefarah/yq@v4.43.1
       - uses: peaceiris/actions-gh-pages@v3.9.3
