@@ -18,6 +18,8 @@ github.com/Unleash/unleash-client-go/v4 v4.1.0 h1:+9ZMa4sb176nlPfZyWYlWHeY8bA3od
 github.com/Unleash/unleash-client-go/v4 v4.1.0/go.mod h1:jzGQjqMwJm2y+vaVLzq3IzZPvh5SRWco0MNIw2KK03I=
 github.com/Unleash/unleash-client-go/v4 v4.1.1 h1:2qa/hxj7AApuA/E3MvxawiTbghu3smJV4C9ia7QP538=
 github.com/Unleash/unleash-client-go/v4 v4.1.1/go.mod h1:gUbLOk661ZfMpFDDHkW6rduDW/7Ru8uZHfXJDjQUs2s=
+github.com/Unleash/unleash-client-go/v4 v4.1.2 h1:5debZAulqJwRJE/7wpKPh1uzA7Zm8KEc+5ChbNzSL4Q=
+github.com/Unleash/unleash-client-go/v4 v4.1.2/go.mod h1:k7LRAXyKeZ1DwqGaKn1KZo92e9JVlEPut4CAhutPJmU=
 github.com/andybalholm/cascadia v1.3.1 h1:nhxRkql1kdYCc8Snf7D5/D3spOX+dBgjA6u8x004T2c=
 github.com/andybalholm/cascadia v1.3.1/go.mod h1:R4bJ1UQfqADjvDa4P6HZHLh/3OxWWEqc0Sk8XGwHqvA=
 github.com/aws/aws-sdk-go v1.49.16 h1:KAQwhLg296hfffRdh+itA9p7Nx/3cXS/qOa3uF9ssig=
@@ -341,6 +343,8 @@ github.com/grpc-ecosystem/grpc-gateway/v2 v2.19.0 h1:Wqo399gCIufwto+VfwCSvsnfGpF
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.19.0/go.mod h1:qmOFXW2epJhM0qSnUUYpldc7gVz2KMQwJ/QYCDIa7XU=
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0 h1:bkypFPDjIYGfCYD5mRBvpqxfYX1YCS1PXdKYWi8FsN0=
 github.com/grpc-ecosystem/grpc-gateway/v2 v2.20.0/go.mod h1:P+Lt/0by1T8bfcF3z737NnSbmxQAppXMRziHUxPOC8k=
+github.com/h2non/gock v1.2.0/go.mod h1:tNhoxHYW2W42cYkYb1WqzdbYIieALC99kpYr7rH/BQk=
+github.com/h2non/parth v0.0.0-20190131123155-b4df798d6542/go.mod h1:Ow0tF8D4Kplbc8s8sSb3V2oUCygFHVp8gC3Dn6U4MNI=
 github.com/hashicorp/golang-lru/v2 v2.0.7 h1:a+bsQ5rvGLjzHuww6tVxozPZFVghXaHOwFs4luLUK2k=
 github.com/hashicorp/golang-lru/v2 v2.0.7/go.mod h1:QeFd9opnmA6QUJc5vARoKUSoFhyfM2/ZepoAG6RGpeM=
 github.com/hirochachacha/go-smb2 v1.1.0 h1:b6hs9qKIql9eVXAiN0M2wSFY5xnhbHAQoCwRKbaRTZI=
