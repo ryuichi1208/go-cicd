@@ -1,0 +1,24 @@
+# cf. https://blog.studysapuri.jp/entry/2023/11/13/android-gha-recipes
+name: Assign
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+
+jobs:
+  assign:
+    name: Assign
+    runs-on: ubuntu-latest
+    if: github.actor != 'renovate[bot]'
+    steps:
+      - name: Assignee
+        # cf. https://cli.github.com/manual/gh_pr_edit
+        run: gh pr edit ${{ github.event.number }} --add-assignee ${{ github.actor }} --repo ${{ github.repository }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+      - name: Auto Assign
+        uses: kentaro-m/auto-assign-action@v2.0.0
+        with:
+          configuration-path: ".github/auto_assign.yml"
