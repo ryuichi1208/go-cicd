@@ -19,7 +19,7 @@ require (
 	github.com/hirochachacha/go-smb2 v1.1.0
 	github.com/labstack/echo v3.3.10+incompatible
 	github.com/mmcdole/gofeed v1.3.0
-	github.com/prometheus/client_golang v1.20.4
+	github.com/prometheus/client_golang v1.20.5
 	github.com/tj/assert v0.0.3
 	github.com/willscott/go-nfs v0.0.2
 	go.opentelemetry.io/otel v1.30.0
