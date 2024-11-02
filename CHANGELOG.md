@@ -1,5 +1,310 @@
 # Changelog
 
+## [v0.0.21](https://github.com/ryuichi1208/go-cicd/compare/v0.0.20...v0.0.21) - 2024-11-02
+- Update Helm release airflow to v16.1.10 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/82
+- Update Helm release apache to v10.2.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/83
+- Update Helm release apisix to v2.2.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/85
+- Update Helm release appsmith to v2.1.13 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/86
+- Update Helm release argo-cd to v5.2.10 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/87
+- Update Helm release cassandra to v10.6.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/88
+- Update Helm release wordpress to v18.1.30 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/89
+- Update module github.com/aws/aws-sdk-go to v1.49.17 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/90
+- Update trufflesecurity/trufflehog action to v3.63.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/91
+- Update Helm release zookeeper to v12.4.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/92
+- Update setup actions packages (major) by @renovate in https://github.com/ryuichi1208/go-cicd/pull/96
+- Update Helm release argo-cd to v5.2.11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/97
+- Update module github.com/PagerDuty/go-pagerduty to v1.8.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/98
+- Update dependency aquaproj/aqua-registry to v4.115.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/99
+- Update Helm release argo-cd to v5.2.12 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/100
+- Update Helm release argo-cd to v5.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/101
+- Update actions/download-artifact action to v4.1.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/102
+- Update module github.com/aws/aws-sdk-go to v1.49.18 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/104
+- Update Helm release zookeeper to v12.4.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/105
+- Update Helm release zookeeper to v12.4.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/106
+- Update module github.com/aws/aws-sdk-go to v1.49.19 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/107
+- Update Helm release airflow to v16.1.11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/108
+- Update Helm release appsmith to v2.1.14 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/109
+- Update Helm release cassandra to v10.6.9 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/110
+- Update Helm release zookeeper to v12.4.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/111
+- Update module github.com/aws/aws-sdk-go to v1.49.20 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/112
+- Update actions/upload-artifact action to v4.1.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/113
+- Update dependency aquaproj/aqua-registry to v4.116.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/114
+- Update dependency aquaproj/aqua-registry to v4.117.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/115
+- Update trufflesecurity/trufflehog action to v3.63.9 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/116
+- Update module github.com/aws/aws-sdk-go to v1.49.21 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/117
+- Update dependency aquaproj/aqua-registry to v4.118.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/118
+- Update Helm release argo-workflows to v6.1.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/119
+- Update Helm release apisix to v2.2.9 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/120
+- Update dependency aquaproj/aqua-registry to v4.119.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/121
+- Update Helm release apache to v10.2.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/122
+- Update Helm release airflow to v16.2.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/123
+- Update Helm release apache to v10.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/124
+- Update Helm release apisix to v2.4.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/125
+- Update Helm release appsmith to v2.2.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/126
+- Update Helm release argo-workflows to v6.2.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/127
+- Update module github.com/aws/aws-sdk-go to v1.49.22 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/128
+- Update trufflesecurity/trufflehog action to v3.63.10 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/130
+- Update Helm release cassandra to v10.7.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/131
+- Update module github.com/aws/aws-sdk-go-v2/config to v1.26.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/129
+- Update Helm release zookeeper to v12.5.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/132
+- Update Helm release apisix to v2.4.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/134
+- Update Helm release argo-cd to v5.4.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/135
+- Update Helm release apache to v10.3.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/137
+- Update module github.com/aws/aws-sdk-go to v1.49.23 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/138
+- Update opentelemetry-go monorepo to v1.22.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/139
+- Update dependency kubernetes/kubectl to v1.29.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/141
+- Update Helm release apisix to v2.4.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/142
+- Update dependency aquaproj/aqua-registry to v4.121.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/136
+- Update Helm release airflow to v16.2.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/143
+- Update Helm release argo-cd to v5.4.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/144
+- Update Helm release appsmith to v2.2.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/145
+- Update Helm release argo-cd to v5.4.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/146
+- Update Helm release argo-workflows to v6.2.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/147
+- Update Helm release cassandra to v10.7.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/148
+- Update Helm release zookeeper to v12.5.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/149
+- Update module github.com/aws/aws-sdk-go to v1.49.24 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/150
+- Update Helm release argo-cd to v5.4.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/151
+- Update module github.com/aws/aws-sdk-go-v2/config to v1.26.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/152
+- Update actions/upload-artifact action to v4.2.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/153
+- Update dependency aquaproj/aqua-registry to v4.122.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/155
+- Update Helm release airflow to v16.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/156
+- Update Helm release apache to v10.4.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/157
+- Update Helm release apisix to v2.5.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/158
+- Update Helm release appsmith to v2.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/159
+- Update Helm release argo-workflows to v6.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/160
+- Update Helm release cassandra to v10.8.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/161
+- Update module github.com/aws/aws-sdk-go to v1.50.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/162
+- Update Helm release argo-cd to v5.4.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/163
+- Update dependency aquaproj/aqua-registry to v4.122.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/164
+- Update Helm release argo-workflows to v6.3.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/165
+- Update Helm release apache to v10.4.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/166
+- Update Helm release airflow to v16.4.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/167
+- Update module github.com/aws/aws-sdk-go to v1.50.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/168
+- Update module github.com/aws/aws-sdk-go-v2/config to v1.26.6 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/169
+- Update trufflesecurity/trufflehog action to v3.63.11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/170
+- Update Helm release appsmith to v2.4.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/171
+- Update Helm release argo-cd to v5.5.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/172
+- Update Helm release zookeeper to v12.6.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/173
+- Update dependency reviewdog/reviewdog to v0.17.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/174
+- Update actions/upload-artifact action to v4.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/175
+- Update module github.com/aws/aws-sdk-go to v1.50.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/176
+- Update trufflesecurity/trufflehog action to v3.64.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/177
+- Update dependency aquaproj/aqua-registry to v4.123.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/178
+- Update module github.com/aws/aws-sdk-go to v1.50.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/179
+- Update module github.com/aws/aws-sdk-go-v2/service/s3 to v1.48.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/180
+- Update Helm release airflow to v16.5.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/181
+- Update Helm release airflow to v16.5.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/182
+- Update module github.com/aws/aws-sdk-go to v1.50.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/183
+- Update dependency aquaproj/aqua-registry to v4.124.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/184
+- Update Helm release cassandra to v10.8.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/185
+- Update Helm release zookeeper to v12.7.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/186
+- Update trufflesecurity/trufflehog action to v3.65.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/187
+- Update module github.com/aws/aws-sdk-go to v1.50.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/188
+- Update Helm release apache to v10.5.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/189
+- Update dependency aquaproj/aqua to v2.22.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/190
+- Update dependency aquaproj/aqua-registry to v4.125.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/191
+- Update Helm release apache to v10.5.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/192
+- Update Helm release cassandra to v10.8.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/193
+- Update dependency aquaproj/aqua-registry to v4.125.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/194
+- Update module github.com/aws/aws-sdk-go to v1.50.6 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/195
+- Update trufflesecurity/trufflehog action to v3.66.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/196
+- Update Helm release apisix to v2.5.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/197
+- Update dependency kubernetes-sigs/kubebuilder to v3.14.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/198
+- Update Helm release appsmith to v2.4.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/199
+- Update Helm release appsmith to v2.4.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/200
+- Update module github.com/aws/aws-sdk-go to v1.50.7 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/201
+- Update trufflesecurity/trufflehog action to v3.66.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/202
+- Update dependency aquaproj/aqua-registry to v4.126.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/203
+- Update Helm release argo-cd to v5.5.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/204
+- Update Helm release airflow to v16.5.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/205
+- Update Helm release apisix to v2.5.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/206
+- Update module github.com/aws/aws-sdk-go to v1.50.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/207
+- Update dependency aquaproj/aqua-registry to v4.127.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/208
+- Update trufflesecurity/trufflehog action to v3.66.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/209
+- Update dependency aquaproj/aqua to v2.23.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/210
+- Update Helm release apache to v10.5.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/211
+- Update Helm release apisix to v2.5.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/212
+- Update Helm release zookeeper to v12.8.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/213
+- Update actions/download-artifact action to v4.1.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/215
+- Update actions/upload-artifact action to v4.3.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/216
+- Update dependency aquaproj/aqua to v2.23.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/217
+- Update dependency kubernetes/kubectl to v1.29.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/218
+- Update dependency reviewdog/reviewdog to v0.17.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/219
+- Update dependency rhysd/actionlint to v1.6.27 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/220
+- Update dependency tilt-dev/ctlptl to v0.8.27 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/221
+- Update dependency tilt-dev/tilt to v0.33.11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/222
+- Update module github.com/aws/aws-sdk-go to v1.50.31 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/223
+- Update Helm release airflow to v16.8.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/224
+- Update Helm release apache to v10.7.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/225
+- Update module github.com/aws/aws-sdk-go to v1.50.32 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/226
+- Update Helm release apisix to v2.9.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/227
+- Update Helm release appsmith to v2.7.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/228
+- Update Helm release argo-cd to v5.9.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/229
+- Update Helm release appsmith to v2.8.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/230
+- Update Helm release argo-cd to v5.10.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/231
+- Update Helm release argo-cd to v5.10.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/232
+- Update Helm release apache to v10.8.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/233
+- Update dependency tilt-dev/ctlptl to v0.8.28 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/234
+- Update module github.com/aws/aws-sdk-go to v1.50.33 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/235
+- Update Helm release apisix to v2.10.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/236
+- Update Helm release argo-workflows to v6.8.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/237
+- Update Helm release cassandra to v10.12.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/238
+- Update Helm release cassandra to v10.12.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/239
+- Update Helm release zookeeper to v12.12.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/240
+- Update actions/setup-java action to v4.1.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/241
+- Update Helm release appsmith to v2.8.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/242
+- Update module github.com/aws/aws-sdk-go to v1.50.34 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/243
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/244
+- Update dependency aquaproj/aqua-registry to v4.151.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/245
+- Update Helm release appsmith to v2.8.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/246
+- Update Helm release argo-cd to v5.10.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/247
+- Update dependency reviewdog/reviewdog to v0.17.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/248
+- Update Helm release argo-cd to v5.10.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/249
+- Update module github.com/aws/aws-sdk-go to v1.50.35 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/250
+- Update Helm release apache to v10.9.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/251
+- Update module github.com/aws/aws-sdk-go to v1.50.36 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/252
+- Update dependency aquaproj/aqua to v2.24.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/253
+- Update dependency golangci/golangci-lint to v1.56.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/254
+- Update dependency kubernetes-sigs/kind to v0.22.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/255
+- Update dependency x-motemen/ghq to v1.5.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/256
+- Update mikefarah/yq action to v4.42.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/257
+- Update module github.com/go-sql-driver/mysql to v1.8.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/258
+- Update Helm release zookeeper to v12.12.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/259
+- Update module github.com/aws/aws-sdk-go to v1.50.37 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/260
+- Update module github.com/mmcdole/gofeed to v1.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/261
+- Update module github.com/prometheus/client_golang to v1.19.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/262
+- Update opentelemetry-go monorepo to v1.24.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/263
+- Update Helm release argo-cd to v5.10.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/264
+- Update Helm release appsmith to v2.8.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/265
+- Update actions/setup-java action to v4.2.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/266
+- Update module github.com/aws/aws-sdk-go to v1.50.38 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/267
+- Update Helm release argo-cd to v5.10.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/268
+- Update dependency aquaproj/aqua-registry to v4.152.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/269
+- Update module github.com/aws/aws-sdk-go-v2/service/s3 to v1.52.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/270
+- Update securego/gosec action to v2.19.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/271
+- Update dependency aquaproj/aqua to v2.24.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/272
+- Update actions/setup-java action to v4.2.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/273
+- Update module github.com/aws/aws-sdk-go to v1.51.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/274
+- Update trufflesecurity/trufflehog action to v3.69.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/275
+- Update Helm release apache to v10.9.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/277
+- Update Helm release appsmith to v2.8.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/278
+- Update Helm release argo-cd to v5.10.6 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/279
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/280
+- Update dependency kubernetes/kubectl to v1.29.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/281
+- Update module github.com/aws/aws-sdk-go to v1.51.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/282
+- Update dependency aquaproj/aqua to v2.25.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/283
+- Update dependency aquaproj/aqua-registry to v4.154.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/284
+- Update Helm release appsmith to v2.8.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/285
+- Update module github.com/aws/aws-sdk-go to v1.51.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/286
+- Update dependency aquaproj/aqua to v2.25.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/287
+- Update module github.com/aws/aws-sdk-go-v2/config to v1.27.9 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/288
+- Update dependency aquaproj/aqua-registry to v4.155.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/289
+- Update dependency golangci/golangci-lint to v1.57.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/290
+- Update dependency starship/starship to v1.18.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/291
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/293
+- Update dependency aquaproj/aqua-registry to v4.155.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/294
+- Update dependency golangci/golangci-lint to v1.57.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/295
+- Update dependency kubernetes-sigs/kubebuilder to v3.14.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/296
+- Update dependency starship/starship to v1.18.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/297
+- Update dependency tilt-dev/tilt to v0.33.12 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/298
+- Update module github.com/aws/aws-sdk-go to v1.51.11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/299
+- Update module github.com/go-sql-driver/mysql to v1.8.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/300
+- Update mikefarah/yq action to v4.43.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/301
+- Update module github.com/cenkalti/backoff/v4 to v4.3.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/302
+- Update dependency aquaproj/aqua to v2.25.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/304
+- Update module github.com/aws/aws-sdk-go to v1.51.14 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/305
+- Update dependency aquaproj/aqua-registry to v4.157.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/306
+- Update Helm release apache to v11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/307
+- Update actions/checkout action to v4.1.7 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/308
+- Update actions/download-artifact action to v4.1.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/309
+- Update actions/upload-artifact action to v4.3.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/310
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/311
+- Update dependency int128/ghcp to v1.13.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/312
+- Update dependency sbstp/kubie to v0.23.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/313
+- Update dependency suzuki-shunsuke/ghalint to v0.2.12 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/314
+- Update dependency tilt-dev/ctlptl to v0.8.29 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/315
+- Update dependency tilt-dev/tilt to v0.33.17 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/316
+- Update module github.com/Unleash/unleash-client-go/v4 to v4.1.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/317
+- Update module github.com/prometheus/client_golang to v1.19.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/318
+- Update setup actions packages by @renovate in https://github.com/ryuichi1208/go-cicd/pull/319
+- Update JamesIves/github-pages-deploy-action action to v4.6.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/320
+- Update Helm release apache to v11.2.11 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/321
+- Update dependency aquaproj/aqua to v2.30.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/322
+- Update dependency aquaproj/aqua-registry to v4.207.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/323
+- Update Helm release apache to v11.2.12 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/324
+- Update dependency golangci/golangci-lint to v1.59.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/325
+- Update dependency kubernetes-sigs/kind to v0.23.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/326
+- Update dependency kubernetes-sigs/kubebuilder to v3.15.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/327
+- Update dependency kubernetes/kubectl to v1.30.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/328
+- Update dependency reviewdog/reviewdog to v0.20.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/329
+- Update dependency aquaproj/aqua-registry to v4.208.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/330
+- Update Helm release apache to v11.2.13 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/331
+- Update dependency rhysd/actionlint to v1.7.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/332
+- Update dependency starship/starship to v1.19.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/333
+- Update dependency x-motemen/ghq to v1.6.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/334
+- Update mikefarah/yq action to v4.44.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/335
+- Update module github.com/aws/aws-sdk-go to v1.55.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/336
+- Update module golang.org/x/sync to v0.7.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/337
+- Update opentelemetry-go monorepo to v1.28.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/338
+- Update securego/gosec action to v2.20.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/339
+- Update dependency aquaproj/aqua-registry to v4.208.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/341
+- Update dependency tilt-dev/ctlptl to v0.8.31 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/342
+- Update actions/setup-java action to v4.2.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/343
+- Update actions/upload-artifact action to v4.3.6 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/344
+- Update mikefarah/yq action to v4.44.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/346
+- Update module github.com/Unleash/unleash-client-go/v4 to v4.1.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/347
+- Update module github.com/aws/aws-sdk-go to v1.55.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/348
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/349
+- Update dependency aquaproj/aqua-registry to v4.213.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/350
+- Update dependency golangci/golangci-lint to v1.60.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/351
+- Update dependency kubernetes-sigs/kind to v0.24.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/352
+- Update dependency aquaproj/aqua-registry to v4.213.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/353
+- Update dependency kubernetes/kubectl to v1.31.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/354
+- Update Helm release apache to v11.2.14 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/355
+- Update dependency starship/starship to v1.20.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/356
+- Update dependency tilt-dev/ctlptl to v0.8.32 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/357
+- Update module github.com/prometheus/client_golang to v1.20.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/358
+- Update module golang.org/x/sync to v0.8.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/359
+- Update Helm release apache to v11.2.20 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/361
+- Update JamesIves/github-pages-deploy-action action to v4.6.8 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/362
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/363
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/364
+- Update dependency int128/ghcp to v1.13.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/365
+- Update dependency kubernetes/kubectl to v1.31.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/366
+- Update dependency reviewdog/reviewdog to v0.20.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/367
+- Update dependency rhysd/actionlint to v1.7.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/368
+- Update dependency tilt-dev/ctlptl to v0.8.34 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/369
+- Update module github.com/Unleash/unleash-client-go/v4 to v4.1.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/370
+- Update module github.com/prometheus/client_golang to v1.20.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/371
+- Update actions/checkout action to v4.2.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/372
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/373
+- Update actions/setup-java action to v4.4.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/374
+- Update actions/upload-artifact action to v4.4.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/375
+- Update dependency aquaproj/aqua to v2.36.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/376
+- Update dependency aquaproj/aqua-registry to v4.229.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/377
+- Update dependency golangci/golangci-lint to v1.61.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/378
+- Update dependency sbstp/kubie to v0.24.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/379
+- Update opentelemetry-go monorepo to v1.30.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/380
+- Update securego/gosec action to v2.21.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/381
+- Create actionlint.yml by @ryuichi1208 in https://github.com/ryuichi1208/go-cicd/pull/383
+- Create test.yam by @ryuichi1208 in https://github.com/ryuichi1208/go-cicd/pull/384
+- Update Helm release apache to v11.2.22 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/387
+- Update actions/checkout action to v4.2.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/388
+- Update actions/upload-artifact action to v4.4.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/389
+- Update dependency aquaproj/aqua to v2.36.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/390
+- Update dependency kubernetes/kubectl to v1.31.2 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/391
+- Update dependency x-motemen/ghq to v1.6.3 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/392
+- Update module github.com/Unleash/unleash-client-go/v4 to v4.1.4 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/393
+- Update module github.com/prometheus/client_golang to v1.20.5 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/394
+- Update aws-sdk-go-v2 monorepo by @renovate in https://github.com/ryuichi1208/go-cicd/pull/395
+- Update dependency aquaproj/aqua-registry to v4.246.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/396
+- Update dependency tilt-dev/ctlptl to v0.8.35 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/397
+- Update dependency starship/starship to v1.21.1 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/398
+- Update module github.com/go-git/go-billy/v5 to v5.6.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/399
+- Update opentelemetry-go monorepo to v1.31.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/400
+- Update setup actions packages by @renovate in https://github.com/ryuichi1208/go-cicd/pull/401
+- Update dependency aquaproj/aqua to v2.37.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/402
+
 ## [v0.0.20](https://github.com/ryuichi1208/go-cicd/compare/v0.0.19...v0.0.20) - 2024-01-08
 - Update dependency tilt-dev/ctlptl to v0.8.25 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/40
 - Update dependency kubernetes-sigs/kind to v0.20.0 by @renovate in https://github.com/ryuichi1208/go-cicd/pull/42
