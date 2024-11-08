@@ -2,7 +2,7 @@ module github.com/ryuichi1208/go-cicd
 
 go 1.22
 
-toolchain go1.23.2
+toolchain go1.23.3
 
 require (
 	github.com/1Password/connect-sdk-go v1.5.3
