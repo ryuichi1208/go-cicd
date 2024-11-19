@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: appleboy/scp-action@v0.1.7
-      - uses: armbian/build@v23.11.2
+      - uses: armbian/build@v24.11.1
       - uses: di-sukharev/opencommit@github-action-v1.0.2
       - uses: JamesIves/github-pages-deploy-action@v4.6.9
       - uses: lowlighter/metrics@v3.34
