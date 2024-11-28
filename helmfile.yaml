@@ -54,4 +54,4 @@ releases:
   - name: cassandra
     namespace: default
     chart: bitnami/cassandra
-    version: 10.12.1
+    version: 12.0.5
