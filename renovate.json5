@@ -7,11 +7,7 @@
   prHourlyLimit: 0,
   prConcurrentLimit: 5,
   ignorePaths: [
-    "live/pro/**/*",
-    "live/dev/**/*",
-    "live/inc/**/*",
-    "live/lambda/**/*",
-    "modules/**/*",
+    "test/**",
   ],
   major: { automerge: false },
   automergeStrategy: "merge-commit",
