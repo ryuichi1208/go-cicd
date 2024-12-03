@@ -16,7 +16,7 @@
   packageRules: [
     {
       matchPackageNames: ["mise"],
-      priority: 1,
+      prPriority: 1,
       labels: ["priority", "mise"],
       automerge: true
     },
