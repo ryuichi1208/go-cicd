@@ -13,7 +13,7 @@ jobs:
           path: prime-numbers
           key: ${{ runner.os }}-primes
       - uses: actions/checkout@v4.2.2
-      - uses: actions/configure-pages@v3.0.7
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
       - uses: actions/delete-package-versions@v4.1.1
       - uses: actions/dependency-review-action@v3
       - uses: actions/deploy-pages@v4
