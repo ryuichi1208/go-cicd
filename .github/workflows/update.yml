@@ -45,4 +45,4 @@ jobs:
       - uses: peaceiris/actions-gh-pages@v3.9.3
       - uses: securego/gosec@v2.21.4
       - uses: super-linter/super-linter@v5.7.2
-      - uses: trufflesecurity/trufflehog@v3.83.6
+      - uses: trufflesecurity/trufflehog@35943b41905eb1195f021955da17c233ed555e24 # v3.84.2
