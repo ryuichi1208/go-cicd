@@ -1,0 +1,52 @@
+{
+  // https://docs.renovatebot.com/presets-config/#configbest-practices
+  extends: ["config:best-practices"],
+  branchPrefix: "renovate/",
+  timezone: "Asia/Tokyo",
+  labels: ["dependencies", "renovate"],
+  prHourlyLimit: 0,
+  prConcurrentLimit: 5,
+  ignorePaths: [
+    "live/pro/**/*",
+    "live/dev/**/*",
+    "live/inc/**/*",
+    "live/lambda/**/*",
+    "modules/**/*",
+  ],
+  major: { automerge: false },
+  automergeStrategy: "merge-commit",
+  rangeStrategy: "bump",
+  rebaseWhen: "auto",
+  packageRules: [
+    {
+      matchPackageNames: ["mise"],
+      priority: 1,
+      labels: ["priority", "mise"],
+      automerge: true
+    },
+    {
+      additionalBranchPrefix: "{{packageFileDir}}/",
+      commitMessageSuffix: "({{packageFileDir}})",
+      matchPackageNames: ["*"],
+    },
+    {
+      matchUpdateTypes: ["major"],
+      addLabels: ["renovate:major"],
+      automerge: false
+    },
+    {
+      matchUpdateTypes: ["minor"],
+      addLabels: ["renovate:minor"],
+      automerge: true
+    },
+    {
+      matchUpdateTypes: ["patch"],
+      addLabels: ["renovate:patch"],
+      enabled: false,
+    },
+  ],
+  vulnerabilityAlerts: {
+    labels: ["security"],
+  },
+  dependencyDashboard: true,
+}
